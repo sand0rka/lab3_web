@@ -1,0 +1,10 @@
+.item-card {
+    max-width: 420px;
+  }
+  
+  .item-container__image {
+    min-height: 200px;
+    max-width: 420px;
+    cursor: pointer;
+  }
+  
