@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Third lab</title>
+
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- UUID library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+  </head>
+
+  <body class="bg-light">
+    <div class="container p-3">
+      <div class="row mb-3">
+        <h1 class="text-center">Trolleybuses</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mt-2">
+          <form id="add_form" class="bg-light">
+            <h3 class="mb-3">Add trolleybus</h3>
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Route number</label>
+							<input type="number" class="form-control" id="route_number_input" />
+						</div>
+            <div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Trolleybus number</label>
+							<input type="number" class="form-control" id="trolleybus_number_input" />
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Capacity</label>
+							<input type="number" class="form-control" id="capacity_input" />
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Max speed</label>
+							<input type="number" class="form-control" id="max_speed_input" />
+						</div>
+            <button id="submit_button" type="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </form>
+          
+
+          <div class="mt-5">
+            <h4 class="mb-3">Find trolleybus</h4>
+            <input id="find_input" type="text" class="form-control" />
+            <button id="find_button" type="button" class="btn btn-primary mt-4">
+              Find
+            </button>
+            <button id="cancel_find_button" type="button" class="btn btn-danger mt-4">
+              Cancel
+            </button>
+          </div>
+        </div>
+
+        <ul id="trolleybus_container" class="col-md-4 mt-5 mt-md-2 mx-auto">
+        </ul>
+
+        <div class="col-md-4">
+          <div class="p-4">
+          <!-- Edit trolleybus section -->
+            <form id="edit_form" class="bg-light mt-4">
+              <h3 class="mb-3">Edit trolleybus</h3>
+              <div class="mb-3">
+                <label for="edit_route_number_input" class="form-label">Route number</label>
+                <input type="number" class="form-control" id="edit_route_number_input"/>
+              </div>
+              <div class="mb-3">
+                <label for="edit_trolleybus_number_input" class="form-label">Trolleybus number</label>
+                <input type="number" class="form-control" id="edit_trolleybus_number_input"/>
+              </div>
+              <div class="mb-3">
+                <label for="edit_capacity_input" class="form-label">Capacity</label>
+                <input type="number" class="form-control" id="edit_capacity_input"/>
+              </div>
+              <div class="mb-3">
+                <label for="edit_max_speed_input" class="form-label">Max speed</label>
+                <input type="number" class="form-control" id="edit_max_speed_input"/>
+              </div>
+              <button id="edit_button" type="submit" class="btn btn-primary">
+                Save Changes
+              </button>
+            </form>
+          </div>
+            
+            <div class="mt-4">
+              <h4 class="mb-2">Calculate total capacity</h4>
+              <p class="text mt-4" id="summary_capacity"></p>
+              <button id="calculate_button" type="button" class="btn btn-primary mt-4">
+                Calculate
+              </button>
+            </div>
+            <div class="mt-4">
+              <h4 class="mb-2">Sort trolleybuses by speed</h4>
+              <button id="sort_button" type="button" class="btn btn-primary mt-4">
+                Sort
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
